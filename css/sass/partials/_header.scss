@@ -5,15 +5,139 @@ header.site_header {
 	background: #2c3e50;
 	padding: 5px 0;
 	overflow: hidden;
+	font-size: 20px;
+	background: #2c3e50 url(../images/layout/woods.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: top center;
+	width: 100%;
+	height: 100vh;
+}
+header.site_header .inner_content {
+	height: 100%;
+}
+header.site_header a.nav_button {
+	float: right;
+	color: $white;
+} 
+header.site_header a.logo {
+	float: left;
+	z-index: 9999;
+}
+nav.site_nav {
+	float: left;
+}
+nav.site_nav ul {
+
+}
+nav.site_nav ul li {
+	display: block;
+	float: left;
+	padding: 10px 20px;
+	text-align: center;
+	text-transform: uppercase;
+}
+nav.site_nav ul li a {
+	color: $white;
+}
+nav.site_nav ul li a:hover {
+	opacity: 0.8;
+}
+
+.hero_copy {
+	position: absolute;
+	top: 25%;
+	left: 0%;
+	color: $white;
+}
+.hero_copy h1 {
+
+}
+.hero_copy h1:after {
+	display: block;
+	width: 100px;
+	height: 2px;
+	float: left;
+	background: #2c3e50;
 }
 
 
+// SEARCHBAR
+	// SEARCHBAR
+	input, textarea { 
+	  -webkit-font-smoothing: antialiased;
+	  -webkit-text-size-adjust: 100%;
+	  -ms-text-size-adjust: 100%;
+	  -webkit-box-sizing: border-box;
+	  -moz-box-sizing: border-box;
+	  box-sizing: border-box;
+	  outline: 0; 
+	}
+	/** hidden search field **/
+	#searchbar {
+	  background: $white;
+	  float: left;
+	  width: 20%;
+	  margin: 0 auto;
+	  z-index: 99;
+	  padding: 0;
+	  border-radius: 10px;
+	}
+	#searchbar form {
+		width: 100%;
+		margin: 0 auto;
+		position: relative;
+		overflow: hidden;
+		border-radius: 10px;
+	}
+	#s {
+	  display: block;
+	  width: 100%;
+	  border: 0;
+	  outline: none;
+	  padding: 7px 5px;
+	  font-size: 14px;
+	  font-weight: bold;
+	  color: #000;
+	}
+
+	#searchsubmit {
+		position: absolute;
+		top: 0;
+		right: 0;
+		padding: 5px 10px;
+	  	display: block;
+	  	color: $white;
+	  	background: grey;
+	  	border: 0;
+	  	outline: none;
+	  	font-size: 20px;
+	  	cursor: pointer;
+	}
+// END SEARCHBAR
 // TABLET STYLES
 @include respond-to(tablet) {
 	
 }
 
 // MOBILE SYLES
-@include respond-to(mobile) {
-
+@include respond-to(mobile) {	
+	nav.site_nav {
+		display: none;
+		    background: #fff;
+		    width: 100%;
+		    padding: 50px 0;
+		    position: fixed;
+		    top: 0;
+		    left: 0;
+		    z-index: 9;
+		    height: 100vh;
+	}
+	nav.site_nav ul li {
+		padding: 10px 0;
+		width: 100%;
+	}
+	nav.site_nav ul li a {
+		color: $black;
+	}
 }

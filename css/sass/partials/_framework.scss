@@ -104,6 +104,8 @@ a.site_cta:hover {
 
 // MOBILE SYLES
 @include respond-to(mobile) {
+	.show_mobile {display: block;}
+	.show_desktop {display: none;}
 	.inner_content {
 		margin: 0 2%;
 		min-width: 96%;
