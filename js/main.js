@@ -21,35 +21,114 @@ function centerModal() {
 	$(window).on("resize", function() {
 		$('.modal:visible').each(centerModal);
 	});
-$(function(){
-  var $searchlink = $('#searchtoggl i');
-  var $searchbar  = $('#searchbar');
-  
-  $('li.search').on('click', function(e){
-    e.preventDefault();
-    
-    if($(this).attr('id') == 'searchtoggl') {
-      // if(!$searchbar.is(":visible")) { 
-      //   // if invisible we switch the icon to appear collapsable
-      //   $searchlink.removeClass('fa-search').addClass('fa-search-minus');
-      // } else {
-      //   // if visible we switch the icon to appear as a toggle
-      //   $searchlink.removeClass('fa-search-minus').addClass('fa-search');
-      // }
-      
-      $searchbar.slideToggle(300, function(){
-        // callback after search bar animation
-      });
-    }
-  });
-  
-  $('#searchform').submit(function(e){
-    e.preventDefault(); // stop form submission
-  });
-});
 $(document).ready(function(){
 	$(".nav_button").click(function(){
 		$("nav.site_nav").slideToggle();
 
 	}); 
 });
+
+(function() {
+	var morphSearch = document.getElementById( 'morphsearch' ),
+		input = morphSearch.querySelector( 'input.morphsearch-input' ),
+		ctrlClose = morphSearch.querySelector( 'span.morphsearch-close' ),
+		isOpen = isAnimating = false,
+		// show/hide search area
+		toggleSearch = function(evt) {
+			// return if open and the input gets focused
+			if( evt.type.toLowerCase() === 'focus' && isOpen ) return false;
+
+			var offsets = morphsearch.getBoundingClientRect();
+			if( isOpen ) {
+				classie.remove( morphSearch, 'open' );
+
+				// trick to hide input text once the search overlay closes 
+				// todo: hardcoded times, should be done after transition ends
+				if( input.value !== '' ) {
+					setTimeout(function() {
+						classie.add( morphSearch, 'hideInput' );
+						setTimeout(function() {
+							classie.remove( morphSearch, 'hideInput' );
+							input.value = '';
+						}, 300 );
+					}, 500);
+				}
+				
+				input.blur();
+			}
+			else {
+				classie.add( morphSearch, 'open' );
+			}
+			isOpen = !isOpen;
+		};
+
+	// events
+	input.addEventListener( 'focus', toggleSearch );
+	ctrlClose.addEventListener( 'click', toggleSearch );
+	// esc key closes search overlay
+	// keyboard navigation events
+	document.addEventListener( 'keydown', function( ev ) {
+		var keyCode = ev.keyCode || ev.which;
+		if( keyCode === 27 && isOpen ) {
+			toggleSearch(ev);
+		}
+	} );
+
+
+	/***** for demo purposes only: don't allow to submit the form *****/
+	morphSearch.querySelector( 'button[type="submit"]' ).addEventListener( 'click', function(ev) { ev.preventDefault(); } );
+})();
+
+
+$(function() {
+  $('a[href*=#]:not([href=#])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        return false;
+      }
+    }
+  });
+});
+
+// WAYPOINTS
+  // hide our element on page load         
+  $('.post').waypoint(function() {
+    $('.post').addClass('fadeInLeft');
+
+  }, {offset: '75%' });
+
+function onScrollInit( items, trigger ) {
+  items.each( function() {
+    var osElement = $(this),
+        osAnimationClass = osElement.attr('data-os-animation'),
+        osAnimationDelay = osElement.attr('data-os-animation-delay');
+      
+        osElement.css({
+          '-webkit-animation-delay':  osAnimationDelay,
+          '-moz-animation-delay':     osAnimationDelay,
+          'animation-delay':          osAnimationDelay
+        });
+
+        var osTrigger = ( trigger ) ? trigger : osElement;
+        
+        osTrigger.waypoint(function() {
+          osElement.addClass('animated').addClass(osAnimationClass);
+          },{
+              triggerOnce: true,
+              offset: '65%'
+        });
+  });
+}
+
+ onScrollInit( $('.os-animation') );
+ onScrollInit( $('.staggered-animation'), $('.staggered-animation-container') );
+// END WAYPOINTS
+
+
+
+

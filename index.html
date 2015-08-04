@@ -19,33 +19,48 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        <div class="site_container container_fluid_24">
+        <div class="site_container container_fluid_24" id="site_container"> 
             <!-- HEADER -->
             <header class="site_header">
                 <div class="inner_content">
-                    <a href="#" class="logo"><img src="images/layout/logo.jpg" alt="Greenleaves" width="100%"></a>   
+                    <a href="#" class="logo show_mobile"><img src="images/layout/logo.png" alt="Greenleaves" width="100%"></a>   
                     <a href="#" class="nav_button show_mobile"><i class="fa fa-bars"></i></a>
                     <nav class="site_nav">                        
                         <ul>
-                            <li><a href="#">Lorem</a></li>
-                            <li><a href="#">Lorem</a></li>
-                            <li><a href="#">Lorem</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#news">News</a></li>
+                            <li><a href="#members">Members</a></li>
+
+                            <li class="logo_container">
+                                <a href="#" class="show_desktop">
+                                    <div class="logo">
+                                        <img src="images/layout/logo.png" alt="Greenleaves" width="100%">
+                                    </div>                                    
+                                </a>  
+                            </li>
+
+                            <li><a href="#social">Social</a></li>
+                            <li><a href="#donate">Donate</a></li>
+                            <li class="search">
+                                <div id="morphsearch" class="morphsearch">
+                                    <form class="morphsearch-form">
+                                        <input class="morphsearch-input" type="search" placeholder="Search..."/>
+                                        <button class="morphsearch-submit" type="submit"><i class="fa fa-search"></i></button>
+                                    </form>
+                                    
+                                    <span class="morphsearch-close"></span>
+                                </div><!-- /morphsearch -->
+                            </li>
                         </ul>
                     </nav>                 
-                    <div class="hero_copy">
+                    <div class="hero_copy animated fadeIn">
                          <h1>Lorem Ipsum</h1>
                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis similique aspernatur fugit mollitia commodi voluptatum eos atque nam aliquid maxime neque sapiente, cupiditate in excepturi, quaerat pariatur sunt libero veritatis.</p>
-                     </div> 
-
-                    <section id="searchbar" class="clearfix">                    
-                        <form id="searchform" method="get" action="searchpage.php">
-                            <button type="submit" id="searchsubmit" class="fa fa-search fa-4x"></button>
-                            <input type="search" name="s" id="s" placeholder="Keywords..." autocomplete="off">                                        
-                        </form>
-                    </section>       
-                </div>
-                   
+                         <a href="#about" class="site_cta">Read more</a>
+                     </div>   
+                </div>                   
             </header>
+
             <!-- END HEADER -->
             <div class="main_content hp_content">
                 <!-- PROFILE SIDEBAR -->
@@ -55,10 +70,15 @@
                 <!-- END SIDEBAR -->
 
                 <!-- MEMBERS - CONNECT/VIEW PROFILE -->
-                <section class="row members">
+                <section class="row members" id="members">
                     <div class="inner_content">
-                        <div class="responsive">
-                            <div class="profile grid_fluid_8">
+                        <header>
+                            <h2>Connect</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, aliquam consectetur? Voluptate saepe quaerat, odio doloremque, dolorem rem placeat repellat optio quae voluptatibus laudantium quibusdam autem non itaque aspernatur ex.</p>
+                        </header>
+
+                        <div id="carousel" class="carousel">
+                            <div class="profile os-animation" data-os-animation="fadeIn" data-os-animation-delay="0.5s">
                                 <header> 
                                     <img src="images/members/member_cover_01.jpg" alt="member" width="100%">
                                 </header>
@@ -70,7 +90,7 @@
                                 <a href="#" data-toggle="modal" data-target="#modal1" class="btn site_cta connect">Connect</a>
                             </div>  
 
-                            <div class="profile grid_fluid_8">
+                            <div class="profile os-animation" data-os-animation="fadeIn" data-os-animation-delay="0.75s">
                                 <header> 
                                     <img src="images/members/member_cover_02.jpg" alt="member" width="100%">
                                 </header>
@@ -82,7 +102,42 @@
                                 <a href="#" data-toggle="modal" data-target="#modal1" class="btn site_cta connect">Connect</a>
                             </div>                          
 
-                            <div class="profile grid_fluid_8">
+                            <div class="profile os-animation" data-os-animation="fadeIn" data-os-animation-delay="1s">
+                                <header> 
+                                    <img src="images/members/member_cover_03.jpg" alt="member" width="100%">
+                                </header>
+                                <img src="images/members/member_03.jpg" alt="Member Image" class="avatar">
+                                <div class="title">
+                                    <h4>Lorem Ipsum</h4>
+                                    <h5 class="muted regular">Lorem Ipsum</h5>
+                                </div>
+                                <a href="#" data-toggle="modal" data-target="#modal1" class="btn site_cta connect">Connect</a>
+                            </div>  
+                            <div class="profile os-animation" data-os-animation="fadeIn" data-os-animation-delay="1.25s">
+                                <header> 
+                                    <img src="images/members/member_cover_01.jpg" alt="member" width="100%">
+                                </header>
+                                <img src="images/members/member_01.jpg" alt="Member Image" class="avatar">
+                                <div class="title">
+                                    <h4>Lorem Ipsum</h4>
+                                    <h5 class="muted regular">Lorem Ipsum</h5>
+                                </div>
+                                <a href="#" data-toggle="modal" data-target="#modal1" class="btn site_cta connect">Connect</a>
+                            </div>  
+
+                            <div class="profile os-animation" data-os-animation="fadeIn" data-os-animation-delay="1.5s">
+                                <header> 
+                                    <img src="images/members/member_cover_02.jpg" alt="member" width="100%">
+                                </header>
+                                <img src="images/members/member_02.jpg" alt="Member Image" class="avatar">
+                                <div class="title">
+                                    <h4>Lorem Ipsum</h4>
+                                    <h5 class="muted regular">Lorem Ipsum</h5>
+                                </div>
+                                <a href="#" data-toggle="modal" data-target="#modal1" class="btn site_cta connect">Connect</a>
+                            </div>                          
+
+                            <div class="profile os-animation" data-os-animation="fadeIn" data-os-animation-delay="1.75s">
                                 <header> 
                                     <img src="images/members/member_cover_03.jpg" alt="member" width="100%">
                                 </header>
@@ -94,78 +149,217 @@
                                 <a href="#" data-toggle="modal" data-target="#modal1" class="btn site_cta connect">Connect</a>
                             </div>  
                         </div>
-                    </div>                
-                </section>
+                    </div> 
 
-                <!-- MEMBER POP UP INFO -->
-                <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content modal-popup">
-                            <a href="#" class="close-link"><i class="icon_close_alt2"></i></a>
-                            <h3 class="white">Connect</h3>
-                           
+                    <!-- MEMBER POP UP INFO -->
+                    <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content modal-popup">
+                                <a href="#" class="close-link"><i class="icon_close_alt2"></i></a>
+                                <h3 class="white">Connect</h3>
+                               
+                            </div>
                         </div>
                     </div>
+                    <!-- END MEMBERS POP UP/ MEMBER SECTION -->               
+                </section>
+
+                <div class="parallax">
+                    <div class="bg bg_01"></div>
                 </div>
-                <!-- END MEMBERS POP UP/ MEMBER SECTION -->
+
+                <section class="row news os-animation" data-os-animation="fadeIn" id="news">                    
+                    <header>
+                        <div class="inner_content">
+                            <h2>News</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum temporibus dignissimos illo minima, quisquam? Pariatur ipsum fugiat ipsa delectus, reiciendis quisquam, eveniet officiis quibusdam culpa, quod veritatis dolor ducimus nulla?</p>
+                        </div>
+                    </header>
+
+                    <div class="grid_container">
+                        <ul>
+                            <li class="col_2">
+                                <a href="#">
+                                    <div>
+                                        <img src="images/news/01-screenshot.jpg" width="100%">
+                                        <h3>Lorem</h3>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="col_2">
+                                <a href="#">
+                                    <div>
+                                        <img src="images/news/02-screenshot.jpg" width="100%">
+                                        <h3>Lorem</h3>
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <div>
+                                        <img src="images/news/03-screenshot.jpg" width="100%">
+                                        <h3>Lorem</h3>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="col_1">
+                                <a href="#">
+                                    <div>
+                                        <img src="images/news/04-screenshot.jpg" width="100%">
+                                        <h3>Lorem</h3>
+                                    </div>
+                                </a>   
+                                <a href="#">
+                                    <div>
+                                        <img src="images/news/05-screenshot.jpg" width="100%">
+                                        <h3>Lorem</h3>
+                                    </div>
+                                </a>                                        
+                            </li>
+
+                            <li class="col_2">
+                                <a href="#">
+                                    <div>
+                                        <img src="images/news/07-screenshot.jpg" width="100%">
+                                        <h3>Lorem</h3>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="col_2">
+                                <a href="#">
+                                    <div>
+                                        <img src="images/news/06-screenshot.jpg" width="100%">
+                                        <h3>Lorem</h3>
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <div>
+                                        <img src="images/news/03-screenshot.jpg" width="100%">
+                                        <h3>Lorem</h3>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="col_1">
+                                <a href="#">
+                                    <div>
+                                        <img src="images/news/07-screenshot.jpg" width="100%">
+                                        <h3>Lorem</h3>
+                                    </div>
+                                </a>   
+                                <a href="#">
+                                    <div>
+                                        <img src="images/news/08-screenshot.jpg" width="100%">
+                                        <h3>Lorem</h3>
+                                    </div>
+                                </a>                                        
+                            </li>
+                        </ul>
+                    </div>                    
+                </section>
+
+                <section class="row social" id="social">
+                    <div class="inner_content">
+                        <header>
+                            <h2>Social</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo nulla, aut ipsum est officiis accusantium distinctio nemo iure expedita similique, eos animi voluptas iste provident ab! Recusandae non enim ut!</p>
+                        </header>
+
+                        <article class="feed facebook os-animation" data-os-animation="fadeIn">
+                            <h3>Facebook</h3>
+                            <div class="feed_activity">
+                                
+                            </div>
+
+                            <a href="#" target="_blank" class="site_cta">Follow</a>
+                        </article>
+
+                         <article class="feed twitter os-animation" data-os-animation="fadeIn">
+                            <h3>Twitter</h3>
+                            <div class="feed_activity">
+                                
+                            </div>
+
+                            <a href="#" target="_blank" class="site_cta">Follow</a>
+                        </article>
+
+                         <article class="feed insta os-animation" data-os-animation="fadeIn">
+                            <h3>Instagram</h3>
+                            <div class="feed_activity">
+                                
+                            </div>
+
+                            <a href="#" target="_blank" class="site_cta">Follow</a>
+                        </article>
+                    </div>
+                </section>
+
+                <div class="parallax">
+                    <div class="bg bg_01"></div>
+                </div>
+
+                <section class="row donate os-animation" data-os-animation="fadeIn" id="donate">
+                    <div class="inner_content">
+                        <header>
+                            <h2>Donate</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis vitae, repellendus magnam! Eum aspernatur consectetur, adipisci quas. Debitis, quidem. Sunt rem perspiciatis praesentium officiis nemo cum quas ipsam veritatis ipsum.</p>
+                        </header>
+
+                        <form action="" class="donate_form">
+                            <div class="form_item"> 
+                                <img src="images/meditate.jpg" alt="Donate" width="100%">
+                                <div class="radio-btn">
+                                    <input type="radio" name="giver" id="reg2pound" class="radio" value="3.00">
+                                </div>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus deleniti illum reiciendis, ad numquam unde nostrum assumenda nam perspiciatiform.donate dolor lorem.</p>
+                                <label for="reg2pound" class="pound-text">£3 a month</label>
+                            </div>
+
+                            <div class="form_item"> 
+                                <img src="images/meditate.jpg" alt="Donate" width="100%">
+                                <div class="radio-btn">
+                                    <input type="radio" name="giver" id="reg5pound" class="radio" value="3.00">
+                                </div>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel perferendis, et doloribus, nostrum harum debitis ab natus veniam nemo. Ea beatae repudiandae porro eligen!</p>
+                                <label for="reg5pound" class="pound-text">£5 a month</label>
+                            </div>
+
+                            <div class="form_item"> 
+                                <img src="images/meditate.jpg" alt="Donate" width="100%">
+                                <div class="radio-btn">
+                                    <input type="radio" name="giver" id="reg10pound" class="radio" value="3.00">
+                                </div>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt asperiores ullam, sit harum exercitationem, aspernatur id, sapiente ratione eos lorem to amet dolor lorem?</p>
+                                <label for="reg10pound" class="pound-text">£10 a month</label>
+                            </div>
+                            <div class="">
+                                <div class="radio-btn">
+                                    <button class="donate site_cta">Donate</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </section>                
             </div>
 
-            
-
-
             <!-- FOOTER -->
-            <footer>
+            <footer class="site_footer">
                 <div class="inner_content">
-                    
+                    <a href="#site_container"><i class="fa fa-chevron-up"></i></a>
                 </div>
             </footer>
-            <!-- END HEADER -->
+            <!-- END FOOTER -->
         </div>      
         <!-- END SITE -->
-
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>
-         
-        <script src="js/slick.min.js"></script>    
-        <script src="js/bootstrap.min.js"></script>      
+        <script src="js/jquery-1.10.2.min.js"></script>
+        <script src="js/owl.carousel.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>     
+        <script src="js/classie.js"></script>      
+        <script src="js/waypoints.js"></script>  
         <script src="js/main.js"></script>  
-
         <script>
-            $('.responsive').slick({
-              dots: true,
-              infinite: true,
-              speed: 300,
-              slidesToShow: 4,
-              slidesToScroll: 4,
-              responsive: [
-                {
-                  breakpoint: 1024,
-                  settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 3,
-                    infinite: true,
-                    dots: true
-                  }
-                },
-                {
-                  breakpoint: 600,
-                  settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2
-                  }
-                },
-                {
-                  breakpoint: 480,
-                  settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                  }
-                }
-                // You can unslick at a given breakpoint now by adding:
-                // settings: "unslick"
-                // instead of a settings object
-              ]
-            });
+        $(document).ready(function() { 
+            $("#carousel").owlCarousel({
+                items: 3              
+            });             
+        });
         </script>
     </body>
 </html>
