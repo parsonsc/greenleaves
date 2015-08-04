@@ -11,7 +11,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/greenleaves.css">
         <script src="js/modernizr-2.6.2.min.js"></script>
     </head>
     <body>
@@ -19,13 +19,137 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        <section class="site_container">
+        <div class="site_container container_fluid_24">
+            <!-- HEADER -->
+            <header class="site_header">
+                <div class="inner_content">
+                    
+                </div>
+            </header>
+            <!-- END HEADER -->
+            <div class="hero_banner">
+                
+            </div>
+
+            <div class="main_content hp_content">
+                <!-- PROFILE SIDEBAR -->
+                <aside class="profile_sidebar">
+                
+                </aside>
+                <!-- END SIDEBAR -->
+
+                <!-- MEMBERS - CONNECT/VIEW PROFILE -->
+                <section class="row members">
+                    <div class="inner_content">
+                        <div class="responsive">
+                            <div class="profile grid_fluid_8">
+                                <header> 
+                                    <img src="images/members/member_cover_01.jpg" alt="member" width="100%">
+                                </header>
+                                <img src="images/members/member_01.jpg" alt="Member Image" class="avatar">
+                                <div class="title">
+                                    <h4>Lorem Ipsum</h4>
+                                    <h5 class="muted regular">Lorem Ipsum</h5>
+                                </div>
+                                <a href="#" data-toggle="modal" data-target="#modal1" class="btn site_cta connect">Connect</a>
+                            </div>  
+
+                            <div class="profile grid_fluid_8">
+                                <header> 
+                                    <img src="images/members/member_cover_02.jpg" alt="member" width="100%">
+                                </header>
+                                <img src="images/members/member_02.jpg" alt="Member Image" class="avatar">
+                                <div class="title">
+                                    <h4>Lorem Ipsum</h4>
+                                    <h5 class="muted regular">Lorem Ipsum</h5>
+                                </div>
+                                <a href="#" data-toggle="modal" data-target="#modal1" class="btn site_cta connect">Connect</a>
+                            </div>                          
+
+                            <div class="profile grid_fluid_8">
+                                <header> 
+                                    <img src="images/members/member_cover_03.jpg" alt="member" width="100%">
+                                </header>
+                                <img src="images/members/member_03.jpg" alt="Member Image" class="avatar">
+                                <div class="title">
+                                    <h4>Lorem Ipsum</h4>
+                                    <h5 class="muted regular">Lorem Ipsum</h5>
+                                </div>
+                                <a href="#" data-toggle="modal" data-target="#modal1" class="btn site_cta connect">Connect</a>
+                            </div>  
+                        </div>
+                    </div>                
+                </section>
+
+                <!-- MEMBER POP UP INFO -->
+                <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content modal-popup">
+                            <a href="#" class="close-link"><i class="icon_close_alt2"></i></a>
+                            <h3 class="white">Connect</h3>
+                           
+                        </div>
+                    </div>
+                </div>
+                <!-- END MEMBERS POP UP/ MEMBER SECTION -->
+            </div>
+
             
-        </section>      
+
+
+            <!-- FOOTER -->
+            <footer>
+                <div class="inner_content">
+                    
+                </div>
+            </footer>
+            <!-- END HEADER -->
+        </div>      
+        <!-- END SITE -->
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>       
+         
+        <script src="js/slick.min.js"></script>    
+        <script src="js/bootstrap.min.js"></script>      
+        <script src="js/main.js"></script>  
+
+        <script>
+            $('.responsive').slick({
+              dots: true,
+              infinite: true,
+              speed: 300,
+              slidesToShow: 4,
+              slidesToScroll: 4,
+              responsive: [
+                {
+                  breakpoint: 1024,
+                  settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite: true,
+                    dots: true
+                  }
+                },
+                {
+                  breakpoint: 600,
+                  settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2
+                  }
+                },
+                {
+                  breakpoint: 480,
+                  settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                  }
+                }
+                // You can unslick at a given breakpoint now by adding:
+                // settings: "unslick"
+                // instead of a settings object
+              ]
+            });
+        </script>
     </body>
 </html>

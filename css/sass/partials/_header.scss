@@ -1,0 +1,19 @@
+// GREEN LEAVES
+
+
+header.site_header {
+	background: #2c3e50;
+	padding: 5px 0;
+	overflow: hidden;
+}
+
+
+// TABLET STYLES
+@include respond-to(tablet) {
+	
+}
+
+// MOBILE SYLES
+@include respond-to(mobile) {
+
+}
